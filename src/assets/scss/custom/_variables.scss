@@ -1,0 +1,18 @@
+/* Contains custom bootstrap variables to override the variables set by the theme file _variables.scss */
+@import url('https://use.typekit.net/fuf5kgn.css'); // font - Proxima Nova - used by Flickr
+
+$font-family-sans-serif:
+  // First choice for all platforms if available
+  "Proxima Nova",
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue", Arial, sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
