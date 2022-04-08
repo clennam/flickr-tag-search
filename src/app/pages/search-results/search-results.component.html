@@ -10,7 +10,18 @@
                 images</label>
         </div>
     </div>
-    <div class="row">
-        <img *ngFor="let item of imageResults?.items;" [src]="item.media.m" class="img-fluid col-3 px-0">
+    <div class="d-flex flex-row w-100 pb-5">
+        <div class="d-flex flex-column w-25">
+            <img *ngFor="let item of imageResults?.items.slice(0,4);" [src]="item.media.m" class="img-fluid p-1">
+        </div>
+        <div class="d-flex flex-column w-25">
+            <img *ngFor="let item of imageResults?.items.slice(5,9);" [src]="item.media.m" class="img-fluid p-1">
+        </div>
+        <div class="d-flex flex-column w-25">
+            <img *ngFor="let item of imageResults?.items.slice(10,14);" [src]="item.media.m" class="img-fluid p-1">
+        </div>
+        <div class="d-flex flex-column w-25">
+            <img *ngFor="let item of imageResults?.items.slice(15,19);" [src]="item.media.m" class="img-fluid p-1">
+        </div>
     </div>
 </div>
