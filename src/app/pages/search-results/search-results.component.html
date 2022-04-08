@@ -1,6 +1,16 @@
 <div class="container-fluid">
-    <div class="row py-3 bg-dark">
+    <div class="row py-3 mb-2 bg-dark">
         <app-search-bar [searchTerm]="searchTerm" [view]='"minimised"'></app-search-bar>
     </div>
-    <p>search-results works!</p>
+    <div class="input-group w-100 pb-2">
+        <div class="form-check form-switch mx-auto">
+            <input class="form-check-input rounded-pill" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                [(ngModel)]="hiRes" (change)="changeResolution()">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Retrieve high resolution
+                images</label>
+        </div>
+    </div>
+    <div class="row">
+        <img *ngFor="let item of imageResults?.items;" [src]="item.media.m" class="img-fluid col-3 px-0">
+    </div>
 </div>
