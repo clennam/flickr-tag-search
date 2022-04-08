@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
-  searchTerm: string = '';
+  @Input() searchTerm: string = '';
   @Input() view: string = 'expanded';
 
   constructor(private router: Router) { }
@@ -16,7 +16,16 @@ export class SearchBarComponent implements OnInit {
   }
 
   goToResults(): void {
-    this.router.navigate(['/results']);
+    if (this.searchTerm) {
+      this.router.navigate(['/results', this.searchTerm]);
+    }
+  }
+
+  searchByTag(term?: string): void {
+    if (term) {
+      this.searchTerm = term;
+    }
+    this.goToResults();
   }
 
 }
