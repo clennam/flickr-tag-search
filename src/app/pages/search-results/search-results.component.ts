@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { SearchService } from '../../core/search/search.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class SearchResultsComponent implements OnInit {
   imageResults: any;
   hiRes: boolean = false;
 
-  constructor(private route: ActivatedRoute, private searchService: SearchService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private searchService: SearchService) { }
 
   changeResolution() {
     // difference between mid res and hi res flickr src urls is a simple prefix
@@ -26,6 +27,15 @@ export class SearchResultsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.searchByTag();
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.searchByTag();
+      });
+  }
+
+  searchByTag(): void {
     this.searchTerm = this.route.snapshot.paramMap.get('searchTerm') || '';
 
     if (this.searchTerm) {
