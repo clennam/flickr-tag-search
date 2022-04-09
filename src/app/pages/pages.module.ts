@@ -5,11 +5,13 @@ import { FunctionalsModule } from '../functionals/functionals.module';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     SearchPageComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
