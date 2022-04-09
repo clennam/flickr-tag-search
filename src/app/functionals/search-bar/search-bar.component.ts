@@ -17,6 +17,8 @@ export class SearchBarComponent implements OnInit {
 
   goToResults(): void {
     if (this.searchTerm) {
+      // turn spaces into a comma separated string
+      this.searchTerm = this.searchTerm.split(' ').join(', ');
       this.router.navigate(['/results', this.searchTerm]);
     }
   }
