@@ -10,7 +10,7 @@
                 images</label>
         </div>
     </div>
-    <div class="d-flex flex-row w-100 pb-5">
+    <div class="d-none d-lg-flex flex-row w-100 pb-5">
         <div class="d-flex flex-column w-25">
             <img *ngFor="let item of imageResults?.items.slice(0,4);" [src]="item.media.m" class="img-fluid p-1">
         </div>
@@ -22,6 +22,19 @@
         </div>
         <div class="d-flex flex-column w-25">
             <img *ngFor="let item of imageResults?.items.slice(15,19);" [src]="item.media.m" class="img-fluid p-1">
+        </div>
+    </div>
+    <div class="d-none d-md-flex d-lg-none flex-row w-100 pb-5">
+        <div class="d-flex flex-column w-50">
+            <img *ngFor="let item of imageResults?.items.slice(0,9);" [src]="item.media.m" class="img-fluid p-1">
+        </div>
+        <div class="d-flex flex-column w-50">
+            <img *ngFor="let item of imageResults?.items.slice(10,19);" [src]="item.media.m" class="img-fluid p-1">
+        </div>
+    </div>
+    <div class="d-flex d-md-none flex-row w-100 pb-5">
+        <div class="d-flex flex-column w-100">
+            <img *ngFor="let item of imageResults?.items;" [src]="item.media.m" class="img-fluid p-1">
         </div>
     </div>
 </div>
