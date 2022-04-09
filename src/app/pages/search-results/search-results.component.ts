@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { SearchService } from '../../core/search/search.service';
+import { ViewModalComponent } from 'src/app/functionals/view-modal/view-modal.component';
 
 @Component({
   selector: 'app-search-results',
@@ -12,6 +13,9 @@ export class SearchResultsComponent implements OnInit {
   searchTerm: string = '';
   imageResults: any;
   hiRes: boolean = false;
+
+  imgModalId = 'imgModal';
+  @ViewChild(ViewModalComponent) modal!: ViewModalComponent;
 
   constructor(private route: ActivatedRoute, private router: Router, private searchService: SearchService) { }
 
@@ -43,6 +47,10 @@ export class SearchResultsComponent implements OnInit {
         this.imageResults = results;
       });
     }
+  }
+
+  openImgModal(item: any): void {
+    this.modal.openModal(item);
   }
 }
 
