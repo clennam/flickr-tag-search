@@ -10,6 +10,7 @@ import { ViewModalComponent } from 'src/app/functionals/view-modal/view-modal.co
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
+  isLoading: boolean = true;
   searchTerm: string = '';
   imageResults: any;
   hiRes: boolean = false;
@@ -40,11 +41,14 @@ export class SearchResultsComponent implements OnInit {
   }
 
   searchByTag(): void {
+    this.isLoading = true;
+    this.imageResults = [];
     this.searchTerm = this.route.snapshot.paramMap.get('searchTerm') || '';
 
     if (this.searchTerm) {
       this.searchService.searchByTag(this.searchTerm).subscribe(results => {
         this.imageResults = results;
+        this.isLoading = false;
       });
     }
   }
