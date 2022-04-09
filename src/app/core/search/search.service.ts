@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ConnectConfig, Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
-import * as Config from 'api-config.json';
+import * as Config from '../../../assets/api-config.json';
 
 @Injectable({
   providedIn: 'root'
