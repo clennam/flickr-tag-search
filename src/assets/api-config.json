@@ -1,3 +1,4 @@
 {
-    "searchUrl": "https://api-dot-flickr-tag-search.ts.r.appspot.com/search"
+    "searchUrl": "https://api-dot-flickr-tag-search.ts.r.appspot.com/search",
+    "checkHashUrl": "https://api-dot-flickr-tag-search.ts.r.appspot.com/checkHash"
 }
