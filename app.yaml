@@ -1,12 +1,11 @@
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: python37
 service: default
 
 handlers:
-- url: /
+- url: /(.*\.[A-Za-z0-9]{1,4})$
+  static_files: dist/flickr-tag-search/\1
+  upload: dist/flickr-tag-search/(.*\.[A-Za-z0-9]{1,4})$
+
+- url: /(.*)$
   static_files: dist/flickr-tag-search/index.html
   upload: dist/flickr-tag-search/index.html
-
-- url: /
-  static_dir: dist/flickr-tag-search
