@@ -18,7 +18,6 @@ export class ViewModalComponent implements OnInit {
   openModal(item: any): void {
     let imgModal = document.querySelector(`#${this.modalId}`);
     let modalRef = Modal.getOrCreateInstance(imgModal!);
-    console.log(item); // TODO: remove
     this.item = item;
     modalRef.toggle();
 

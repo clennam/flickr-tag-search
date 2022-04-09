@@ -53,6 +53,3 @@ export class SearchResultsComponent implements OnInit {
     this.modal.openModal(item);
   }
 }
-
-// TODO: modal
-// TODO: animations?
