@@ -45,3 +45,6 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 }
+
+// TODO: modal
+// TODO: animations?

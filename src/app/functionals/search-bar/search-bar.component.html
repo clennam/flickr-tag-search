@@ -1,5 +1,5 @@
 <!-- Search Bar -->
-<div class="row col-6 mx-auto">
+<div class="row col col-md-6 mx-auto">
     <div class="input-group align-items-center">
         <input type="search" class="form-control" placeholder="Type in a tag to search for..." [(ngModel)]="searchTerm"
             (keydown.enter)="goToResults()">
@@ -10,8 +10,8 @@
 </div>
 <div *ngIf="view !== 'minimised'" class="pt-4 text-center">
     <div class="col-12 pb-2 text-muted fs-6">Or click one of the tags below to search automatically:</div>
-    <div class="col mx-2 btn btn-secondary rounded-pill" (click)="searchByTag('travel')">#travel</div>
-    <div class="col mx-2 btn btn-secondary rounded-pill" (click)="searchByTag('landscape')">#landscape</div>
-    <div class="col mx-2 btn btn-secondary rounded-pill" (click)="searchByTag('birds')">#birds</div>
+    <div class="col mx-2 my-2 btn btn-secondary rounded-pill" (click)="searchByTag('travel')">#travel</div>
+    <div class="col mx-2 my-2 btn btn-secondary rounded-pill" (click)="searchByTag('landscape')">#landscape</div>
+    <div class="col mx-2 my-2 btn btn-secondary rounded-pill" (click)="searchByTag('birds')">#birds</div>
 </div>
 <!-- Search Bar -->
