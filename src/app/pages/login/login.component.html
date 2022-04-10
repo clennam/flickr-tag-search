@@ -1,5 +1,5 @@
-<div class="container-fluid bg-dark vh-100 d-flex flex-column align-items-center justify-content-center pb-5">
-    <div class="w-100 pb-4">
+<div class="container-fluid bg-dark vh-100 pb-5 my-auto">
+    <div class="row pb-4">
         <div class="col-12">
             <h1 class="text-light text-center">
                 Login
@@ -12,7 +12,7 @@
                 [(ngModel)]="password" (keydown.enter)="checkPassword()">
         </div>
     </div>
-    <div class="row">
+    <div class="row text-center">
         <div class="col-12 text-danger fs-6 pt-2" *ngIf="showPasswordErrorMsg">
             Invalid password, please try again
         </div>
